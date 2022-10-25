@@ -3,6 +3,7 @@ import { serve } from "https://deno.land/std@0.119.0/http/server.ts";
 async function handler(_req: Request): Promise<Response> {
   const guess = await extractGuess(_req)
   const number = await similarity(guess)
+  const stringResponse = "The word " + guess + "has a score of" + number
   return new Response(JSON.stringify(number));
 }
 
