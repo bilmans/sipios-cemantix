@@ -4,7 +4,7 @@ async function handler(_req: Request): Promise<Response> {
   const guess = await extractGuess(_req)
   const number = await similarity(guess)
   const stringResponse = "The word " + guess + "has a score of" + number
-  return new Response(JSON.stringify(number));
+  return new Response(JSON.stringify(stringResponse));
 }
 
 const similarity = async (word1: string) => {
